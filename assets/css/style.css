@@ -3,6 +3,18 @@
     margin: 0;
     padding: 0;
     border: 0;
+    
+    /* COLOR */
+    --dark-color: #343A40;
+    --purple-color: #7952B3;
+    --yellow-color: #FFC107 ;
+    --gray-color: #E1E8EB;
+    
+    /*NoCopy Text*/
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */   
 }
 
 html,body{
@@ -12,8 +24,8 @@ html,body{
 
 /* BODY */
 body{
-    background-color: #343A40;
-    color: #E1E8EB;
+    background-color: var(--dark-color);
+    color: var(--gray-color);
     margin-top: 50px;
 }
 /* NAV */
@@ -21,7 +33,7 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    background-color:#7952B3;
+    background-color: var(--purple-color);
     
 }
 
@@ -29,33 +41,36 @@ body{
     display: inline;
     text-decoration: none;
 }
+
 .menu a:hover{
-    background-color: #FFC107;
-    color: #7952B3;
+    background-color: var(--yellow-color);
+    color:  var(--purple-color);
     padding-left: 15px;
     padding-right: 15px;
+    border: 1px solid #000;
 }
+
 .menu a{
     text-decoration: none;
-    color: #FFC107;
+    color: var(--yellow-color);
     font-size: 20px;
     padding-left: 15px;
     padding-right: 15px;
+    border: 1px solid var(--purple-color);
 }
 /* FOTOER */
 footer{
     position: relative;
-    bottom: 0%;
+    bottom: 0;
     left: 0;
     width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 30px;
-    background-color:#7952B3;
+    background-color: var(--purple-color);
     text-align: center;
-    border-top: 1px solid #FFC107;
+    border-top: 1px solid var(--yellow-color);
 }
-
 /* FORM */
 form{
     display: flex;
@@ -63,23 +78,31 @@ form{
     padding: 20px;
     font-weight: bold;
 }
-button{
+
+form > button{
    margin: 10px 0px 10px 0px;
-   background-color: #FFC107;
+   background-color: var(--yellow-color);
    border: 3px solid #000;
    border-radius: 3%;
    font-weight: bold;
 }
 
+form > button:hover{
+    background-color: #000;
+    color: var(--yellow-color);
+    border: 3px solid var(--yellow-color);
+
+ }
+
 section{
-    background-color: #E1E8EB;
-    color: black;
+    background-color: var(--gray-color);
+    color: #000;
     margin: 20px;
-    box-shadow: 3px 3px #7952B3;
+    box-shadow: 3px 3px  var(--purple-color);
 }
 
 section h2{
-    background-color: #FFC107;
+    background-color: var(--yellow-color);
     border-bottom: 1px solid #000;
 }
 
@@ -100,15 +123,18 @@ p{
 .center{
     text-align: center;
 }
+
 .tm-25{
     width: 25px;
     height: 25px;
     border-radius: 50%;
 }
+
 .tm-150{
     width: 150px;
     padding: 3px;
 }
+
 .pt-10{
     padding: 10px;
 }
