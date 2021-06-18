@@ -3,18 +3,27 @@
     margin: 0;
     padding: 0;
     border: 0;
-    
-    /* COLOR */
-    --dark-color: #343A40;
-    --purple-color: #7952B3;
-    --yellow-color: #FFC107 ;
-    --gray-color: #E1E8EB;
-    
+
     /*NoCopy Text*/
     -webkit-user-select: none;  /* Chrome all / Safari all */
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;          /* Likely future */   
+}
+
+:root{
+    /* COLOR */
+    --first-color: #343A40;
+    --second-color: #7952B3;
+    --third-color: #FFC107 ;
+    --fourth-color: #E1E8EB;
+}
+
+[data-theme="purple"] {
+    --first-color: #F1D4D4;
+    --second-color: #E6739F;
+    --third-color: #CC0E74;
+    --fourth-color: #790C5A;
 }
 
 html,body{
@@ -24,16 +33,21 @@ html,body{
 
 /* BODY */
 body{
-    background-color: var(--dark-color);
-    color: var(--gray-color);
+    background-color: var(--first-color);
+    color: var(--fourth-color);
     margin-top: 50px;
 }
 /* NAV */
 .menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--purple-color);
+    background-color: var(--second-color);
     
 }
 
@@ -43,21 +57,47 @@ body{
 }
 
 .menu a:hover{
-    background-color: var(--yellow-color);
-    color:  var(--purple-color);
+    background-color: var(--third-color);
+    color:  var(--second-color);
     padding-left: 15px;
     padding-right: 15px;
     border: 1px solid #000;
 }
 
 .menu a{
+    font-weight: 250;
     text-decoration: none;
-    color: var(--yellow-color);
+    color: var(--third-color);
     font-size: 20px;
     padding-left: 15px;
     padding-right: 15px;
-    border: 1px solid var(--purple-color);
+    border: 1px solid var(--second-color);
 }
+#theme{
+    margin-left: 5px;
+    background-color: var(--second-color);
+    border: 2px solid var(--third-color);
+    padding: 5px;
+    border-radius: 100%;
+}
+#theme:hover{
+    background-color: var(--third-color);
+}
+#extra{
+    margin-left: 5px;
+    background-color: var(--third-color);
+    border: 2px solid var(--third-color);
+    padding: 5px;
+    border-radius: 100%;
+    transition: 0.3s;
+    opacity: 0;
+}
+#extra:hover{
+    background-color: var(--third-color);
+    opacity: 1;
+}
+
+
 /* FOTOER */
 footer{
     position: relative;
@@ -67,9 +107,9 @@ footer{
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 30px;
-    background-color: var(--purple-color);
+    background-color: var(--second-color);
     text-align: center;
-    border-top: 1px solid var(--yellow-color);
+    border-top: 1px solid var(--third-color);
 }
 /* FORM */
 form{
@@ -81,7 +121,7 @@ form{
 
 form > button{
    margin: 10px 0px 10px 0px;
-   background-color: var(--yellow-color);
+   background-color: var(--third-color);
    border: 3px solid #000;
    border-radius: 3%;
    font-weight: bold;
@@ -89,20 +129,26 @@ form > button{
 
 form > button:hover{
     background-color: #000;
-    color: var(--yellow-color);
-    border: 3px solid var(--yellow-color);
+    color: var(--third-color);
+    border: 3px solid var(--third-color);
 
  }
 
+ #txtNome, #txtEmail, #txtAssunto{
+    font-size: 12px;
+    font-weight: lighter;
+    margin: 1px;
+}
+
 section{
-    background-color: var(--gray-color);
+    background-color: var(--fourth-color);
     color: #000;
     margin: 20px;
-    box-shadow: 3px 3px  var(--purple-color);
+    box-shadow: 3px 3px  var(--second-color);
 }
 
 section h2{
-    background-color: var(--yellow-color);
+    background-color: var(--third-color);
     border-bottom: 1px solid #000;
 }
 
@@ -137,4 +183,8 @@ p{
 
 .pt-10{
     padding: 10px;
+}
+
+#snake{
+    display: none;
 }

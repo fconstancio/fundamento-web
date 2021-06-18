@@ -16,18 +16,22 @@
             <li><a href="./about.html">Sobre</a></li>
             <li><a href="./contact.html">Contato</a></li>
         </ul>
+        <button id='theme' onclick="theme()"></button>
     </nav>
 
     <section class="content-100">
         <h2 class="pt-10">Entre em contato</h2>
-        <form>
+        <form onsubmit="return false"> <!-- no reload -->
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" onkeyup="validaNome()">
+            <div id='txtNome'></div>
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" onkeyup="validaEmail()">
+            <div id='txtEmail'></div>
             <label for="assunto">Assunto:</label>
-            <textarea name="assunto" id="assunto" cols="60" rows="10"></textarea>
-            <button>Enviar</button>
+            <textarea name="assunto" id="assunto" cols="60" rows="10" onkeyup="validaAssunto()"></textarea>
+            <div id='txtAssunto'></div>
+            <button onclick="enviar()">Enviar</button>
         </form>
     </section>
 
@@ -37,7 +41,8 @@
         <a href="https://www.linkedin.com/in/ferconstancio/" target="_blank"><img class="tm-25"
                 src="assets/img/linkedin.png" alt="símbolo do linkedin"></a>
     </footer>
-
+<script src="./assets/js/scripts_form.js"></script>
+<script src="./assets/js/scipts.js"></script>
 </body>
 
 </html>
